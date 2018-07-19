@@ -22,6 +22,11 @@ export default {
       return this.$store.state.sale;
     }
   },
+  beforeCreate() {
+    if (this.$data.trigger) {
+      // this is test for VUEW_UNINITIALIZED_INSTANCE_PROPERTY
+    }
+  },
   methods: {
     updateSale() {
       this.$store.commit('switchSale');
