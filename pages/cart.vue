@@ -4,8 +4,7 @@
     <div v-if="cartTotal > 0">
       <h1>Cart</h1>
       <div class="cartitems"
-        v-for="item in cart"
-        key="item">
+        v-for="item in cart"> 
         <div class="carttext">
           <h4>{{ item.name }}</h4>
           <p>{{ item.price | usdollar }} x {{ item.count }}</p>
@@ -39,9 +38,13 @@ import AppCheckout from './../components/AppCheckout.vue';
 import AppSuccess from './../components/AppSuccess.vue';
 
 export default {
+  props: {
+    prop_test: ''  // alarm
+  },
   data() {
     return {
-      success: false
+      success: false,
+      cart: '' // alarm
     };
   },
   components: {
